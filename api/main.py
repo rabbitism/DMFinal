@@ -1,4 +1,5 @@
 from flask import Flask, request, redirect
+import json
 
 app = Flask(__name__)
 
@@ -8,7 +9,7 @@ def hello():
 
 @app.route("/cuisines", methods=['GET'])
 def return_cuisines():
-    return ["Chinese", "Indian", "American"]
+    return json.dumps(["Chinese", "Indian", "American"])
 
 if __name__ == "__main__":
     app.run()
