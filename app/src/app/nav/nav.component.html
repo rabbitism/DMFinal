@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href='#'>Miniyelp</a>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active" routerLinkActive="active" >
+      <a class='nav-link' [routerLink]="[ '/value']">Cursines</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active" >
+      <a class="nav-link" [routerLink]="[ '/nav']">Link</a>
+    </li>
+  </ul>
+  <form #loginForm="ngForm" class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Choose a cuisine" [(ngModel)]="model"/> 
+  </form>
+</nav>
