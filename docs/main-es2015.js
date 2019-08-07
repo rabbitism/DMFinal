@@ -30,18 +30,18 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<app-nav></app-nav>\n<h1>\n    Our App\n</h1>\n<router-outlet></router-outlet>\n\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<h1>\n    Our App\n</h1>\n<body>\n    <app-panel></app-panel>\n</body>\n<router-outlet></router-outlet>\n\n\n"
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/nav/nav.component.html":
-/*!******************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/nav/nav.component.html ***!
-  \******************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./src/app/panel/panel.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/panel/panel.component.html ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" href='#'>Miniyelp</a>\n\n  <ul class=\"navbar-nav mr-auto\">\n    <li class=\"nav-item active\" routerLinkActive=\"active\" >\n      <a class='nav-link' [routerLink]=\"[ '/value']\">Cursines</a>\n    </li>\n    <li class=\"nav-item\" routerLinkActive=\"active\" >\n      <a class=\"nav-link\" [routerLink]=\"[ '/nav']\">Link</a>\n    </li>\n  </ul>\n  <form #loginForm=\"ngForm\" class=\"form-inline my-2 my-lg-0\">\n    <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Choose a cuisine\" [(ngModel)]=\"model\"/> \n  </form>\n</nav>"
+module.exports = "<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav mode=\"side\" opened>\n    <mat-action-list *ngFor=\"let cuisine of cuisines\">\n      <button mat-list-item> {{cuisine}} </button>\n    </mat-action-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <input>\n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -153,10 +153,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _value_value_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./value/value.component */ "./src/app/value/value.component.ts");
-/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
-/* harmony import */ var _services_query_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./_services/query.service */ "./src/app/_services/query.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
+/* harmony import */ var _services_query_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_services/query.service */ "./src/app/_services/query.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./routes */ "./src/app/routes.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./panel/panel.component */ "./src/app/panel/panel.component.ts");
+/* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/sidenav */ "./node_modules/@angular/material/esm2015/sidenav.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm2015/button.js");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm2015/list.js");
+
+
+
+
 
 
 
@@ -175,16 +183,20 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
             _value_value_component__WEBPACK_IMPORTED_MODULE_6__["ValueComponent"],
-            _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__["NavComponent"]
+            _panel_panel_component__WEBPACK_IMPORTED_MODULE_11__["PanelComponent"]
         ],
         imports: [
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"],
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_10__["appRoutes"])
+            _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_12__["MatSidenavModule"],
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButtonModule"],
+            _angular_material_list__WEBPACK_IMPORTED_MODULE_14__["MatListModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_9__["appRoutes"])
         ],
         providers: [
-            _services_query_service__WEBPACK_IMPORTED_MODULE_8__["QueryService"]
+            _services_query_service__WEBPACK_IMPORTED_MODULE_7__["QueryService"]
         ],
         bootstrap: [
             _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]
@@ -196,61 +208,59 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/nav/nav.component.css":
-/*!***************************************!*\
-  !*** ./src/app/nav/nav.component.css ***!
-  \***************************************/
+/***/ "./src/app/panel/panel.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/panel/panel.component.css ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25hdi9uYXYuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ".example-container {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background: #eee;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFuZWwvcGFuZWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sU0FBUztJQUNULE9BQU87SUFDUCxRQUFRO0lBQ1IsZ0JBQWdCO0VBQ2xCIiwiZmlsZSI6InNyYy9hcHAvcGFuZWwvcGFuZWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWNvbnRhaW5lciB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZWVlO1xyXG4gIH0iXX0= */"
 
 /***/ }),
 
-/***/ "./src/app/nav/nav.component.ts":
-/*!**************************************!*\
-  !*** ./src/app/nav/nav.component.ts ***!
-  \**************************************/
-/*! exports provided: NavComponent */
+/***/ "./src/app/panel/panel.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/panel/panel.component.ts ***!
+  \******************************************/
+/*! exports provided: PanelComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavComponent", function() { return NavComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanelComponent", function() { return PanelComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services_query_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_services/query.service */ "./src/app/_services/query.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 
 
 
-let NavComponent = class NavComponent {
-    constructor(queryService) {
-        this.queryService = queryService;
-        this.cancelRegister = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+let PanelComponent = class PanelComponent {
+    constructor(http) {
+        this.http = http;
+        this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]()
+            .set('Content-Type', 'application/json')
+            .set('Access-Control-Allow-Origin', '*')
+            .set('Accept', 'application/json');
     }
     ngOnInit() {
-    }
-    query() {
-        this.queryService.query(this.model).subscribe(next => {
-            console.log('Successful');
+        this.http.get('http://3.214.193.124:5000/cuisines', { headers: this.headers }).subscribe(response => {
+            this.cuisines = response;
         }, error => {
-            console.log('Error');
+            console.log(error);
         });
     }
 };
-NavComponent.ctorParameters = () => [
-    { type: _services_query_service__WEBPACK_IMPORTED_MODULE_2__["QueryService"] }
+PanelComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
 ];
-tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
-], NavComponent.prototype, "cancelRegister", void 0);
-NavComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+PanelComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-nav',
-        template: __webpack_require__(/*! raw-loader!./nav.component.html */ "./node_modules/raw-loader/index.js!./src/app/nav/nav.component.html"),
-        styles: [__webpack_require__(/*! ./nav.component.css */ "./src/app/nav/nav.component.css")]
+        selector: 'app-panel',
+        template: __webpack_require__(/*! raw-loader!./panel.component.html */ "./node_modules/raw-loader/index.js!./src/app/panel/panel.component.html"),
+        styles: [__webpack_require__(/*! ./panel.component.css */ "./src/app/panel/panel.component.css")]
     })
-], NavComponent);
+], PanelComponent);
 
 
 
