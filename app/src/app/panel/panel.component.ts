@@ -28,7 +28,7 @@ export class PanelComponent implements OnInit {
     this.title = 'You May Also Like: ';
   }
 
-  query(cuisine:string) {
+  query(cuisine: string) {
     this.http.get('http://3.214.193.124:5000/cuisine/' + cuisine + '/10').subscribe(
       response => {
         this.recommendations = response;
