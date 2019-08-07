@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect
 import json
 import os
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 
