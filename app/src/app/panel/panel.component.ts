@@ -17,7 +17,7 @@ export class PanelComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://3.214.193.124:5000/cuisines', { headers: this.headers}).subscribe(response => {
+    this.http.get('https://3.214.193.124:5000/cuisines', { headers: this.headers}).subscribe(response => {
       this.cuisines = response;
     }, error => {
       console.log(error);
