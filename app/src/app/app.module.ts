@@ -13,7 +13,9 @@ import { PanelComponent } from './panel/panel.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
    declarations: [
@@ -29,6 +31,8 @@ import {MatListModule} from '@angular/material/list';
       MatSidenavModule,
       MatButtonModule,
       MatListModule,
+      MatChipsModule,
+      MatCardModule,
       RouterModule.forRoot(appRoutes)
    ],
    providers: [

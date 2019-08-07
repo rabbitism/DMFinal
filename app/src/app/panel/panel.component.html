@@ -1,10 +1,16 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="side" opened>
     <mat-action-list *ngFor="let cuisine of cuisines">
-      <button mat-list-item> {{cuisine}} </button>
+      <button mat-list-item (click)="query(cuisine)" > {{cuisine}} </button>
     </mat-action-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <input>
+      <mat-card> 
+        <mat-card-title>{{title}}</mat-card-title>
+        <mat-chip-list *ngFor="let recommendation of recommendations">
+          <mat-chip>{{recommendation}}</mat-chip>
+        </mat-chip-list>
+      </mat-card>
+      
   </mat-sidenav-content>
 </mat-sidenav-container>

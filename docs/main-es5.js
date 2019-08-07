@@ -41,7 +41,7 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav mode=\"side\" opened>\n    <mat-action-list *ngFor=\"let cuisine of cuisines\">\n      <button mat-list-item> {{cuisine}} </button>\n    </mat-action-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <input>\n  </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav mode=\"side\" opened>\n    <mat-action-list *ngFor=\"let cuisine of cuisines\">\n      <button mat-list-item (click)=\"query(cuisine)\" > {{cuisine}} </button>\n    </mat-action-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n      <mat-card> \n        <mat-card-title>{{title}}</mat-card-title>\n        <mat-chip-list *ngFor=\"let recommendation of recommendations\">\n          <mat-chip>{{recommendation}}</mat-chip>\n        </mat-chip-list>\n      </mat-card>\n      \n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -163,6 +163,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/sidenav */ "./node_modules/@angular/material/esm5/sidenav.es5.js");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
 /* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm5/list.es5.js");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+
+
 
 
 
@@ -196,6 +200,8 @@ var AppModule = /** @class */ (function () {
                 _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_12__["MatSidenavModule"],
                 _angular_material_button__WEBPACK_IMPORTED_MODULE_13__["MatButtonModule"],
                 _angular_material_list__WEBPACK_IMPORTED_MODULE_14__["MatListModule"],
+                _angular_material_chips__WEBPACK_IMPORTED_MODULE_15__["MatChipsModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_16__["MatCardModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(_routes__WEBPACK_IMPORTED_MODULE_9__["appRoutes"])
             ],
             providers: [
@@ -252,6 +258,15 @@ var PanelComponent = /** @class */ (function () {
         var _this = this;
         this.http.get('http://3.214.193.124:5000/cuisines', { headers: this.headers }).subscribe(function (response) {
             _this.cuisines = response;
+        }, function (error) {
+            console.log(error);
+        });
+        this.title = 'You May Also Like: ';
+    };
+    PanelComponent.prototype.query = function (cuisine) {
+        var _this = this;
+        this.http.get('http://3.214.193.124:5000/cuisine/' + cuisine + '/10').subscribe(function (response) {
+            _this.recommendations = response;
         }, function (error) {
             console.log(error);
         });
