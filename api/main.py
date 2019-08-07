@@ -51,4 +51,4 @@ def return_top(cuisine: str, top: int):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(ssl_context='adhoc')
