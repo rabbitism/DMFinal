@@ -41,7 +41,7 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav mode=\"side\" opened>\n    <mat-action-list *ngFor=\"let cuisine of cuisines\">\n      <button mat-list-item (click)=\"query(cuisine)\" > {{cuisine}} </button>\n    </mat-action-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n      <mat-card> \n        <mat-card-title>{{title}}</mat-card-title>\n        <mat-chip-list *ngFor=\"let recommendation of recommendations\">\n          <mat-chip>{{recommendation}}</mat-chip>\n        </mat-chip-list>\n      </mat-card>\n      \n  </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav mode=\"side\" opened>\n    <mat-action-list *ngFor=\"let cuisine of cuisines\">\n      <button mat-list-item (click)=\"query(cuisine)\" > {{cuisine}} </button>\n    </mat-action-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n      <mat-card class='border' style=\"padding-left: 300px\"> \n        <mat-card-title>{{title}}</mat-card-title>\n        <mat-chip-list *ngFor=\"let recommendation of recommendations\">\n          <mat-chip>{{recommendation}}</mat-chip>\n        </mat-chip-list>\n      </mat-card>\n      \n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -221,7 +221,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".example-container {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background: #eee;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFuZWwvcGFuZWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sU0FBUztJQUNULE9BQU87SUFDUCxRQUFRO0lBQ1IsZ0JBQWdCO0VBQ2xCIiwiZmlsZSI6InNyYy9hcHAvcGFuZWwvcGFuZWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWNvbnRhaW5lciB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZWVlO1xyXG4gIH0iXX0= */"
+module.exports = ".example-container {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background: #eee;\r\n  }\r\n\r\nmat-sidenav {\r\n  width: 300px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFuZWwvcGFuZWwuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sU0FBUztJQUNULE9BQU87SUFDUCxRQUFRO0lBQ1IsZ0JBQWdCO0VBQ2xCOztBQUVGO0VBQ0UsWUFBWTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvcGFuZWwvcGFuZWwuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWNvbnRhaW5lciB7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6IDA7XHJcbiAgICBib3R0b206IDA7XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgcmlnaHQ6IDA7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZWVlO1xyXG4gIH1cclxuXHJcbm1hdC1zaWRlbmF2IHtcclxuICB3aWR0aDogMzAwcHg7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -291,13 +291,9 @@ PanelComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appRoutes", function() { return appRoutes; });
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _value_value_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./value/value.component */ "./src/app/value/value.component.ts");
-
 
 const appRoutes = [
-    { path: '', component: _app_component__WEBPACK_IMPORTED_MODULE_0__["AppComponent"] },
-    { path: 'value', component: _value_value_component__WEBPACK_IMPORTED_MODULE_1__["ValueComponent"] },
-    { path: '**', redirectTo: '', pathMatch: 'full' },
+    { path: '**', component: _app_component__WEBPACK_IMPORTED_MODULE_0__["AppComponent"] },
 ];
 
 
