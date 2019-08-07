@@ -4,20 +4,7 @@ import os
 
 app = Flask(__name__)
 
-from functools import wraps
 from flask import make_response
-
-
-def allow_cross_domain(fun):
-    @wraps(fun)
-    def wrapper_fun(*args, **kwargs):
-        rst = make_response(fun(*args, **kwargs))
-        rst.headers['Access-Control-Allow-Origin'] = '*'
-        rst.headers['Access-Control-Allow-Methods'] = 'PUT,GET,POST,DELETE'
-        allow_headers = "Referer,Accept,Origin,User-Agent"
-        rst.headers['Access-Control-Allow-Headers'] = allow_headers
-        return rst
-    return wrapper_fun
 
 cuisines = []
 
@@ -44,20 +31,22 @@ with open(os.sep.join(['.', 'Task7Matrix.csv']), 'r') as mf:
         top_list[cuisines[i]] = top
 
 @app.route("/", methods=['GET'])
-@allow_cross_domain
 def hello():
     return "Hello World!"
 
 @app.route("/cuisines", methods=['GET'])
-@allow_cross_domain
 def return_cuisines():
-    return json.dumps(cuisines)
+    response = make_response(json.dumps(cuisines))
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 @app.route("/cuisine/<cuisine>/<top>", methods=['GET'])
-@allow_cross_domain
 def return_top(cuisine: str, top: int):
     top_index = min(int(top), 40)
-    return json.dumps(top_list[cuisine][0:top_index])
+    response = make_response(json.dumps(top_list[cuisine][0:top_index]))
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    
+    return response
 
 
 if __name__ == "__main__":
