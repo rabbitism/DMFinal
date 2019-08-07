@@ -41,7 +41,7 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav mode=\"side\" opened>\n    <mat-action-list *ngFor=\"let cuisine of cuisines\">\n      <button mat-list-item (click)=\"query(cuisine)\" > {{cuisine}} </button>\n    </mat-action-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n      <mat-card class='border' style=\"padding-left: 300px\"> \n        <mat-card-title>{{title}}</mat-card-title>\n        <mat-chip-list *ngFor=\"let recommendation of recommendations\">\n          <mat-chip>{{recommendation}}</mat-chip>\n        </mat-chip-list>\n      </mat-card>\n      \n  </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container class=\"example-container\">\n  <mat-sidenav mode=\"side\" opened>\n    <mat-action-list *ngFor=\"let cuisine of cuisines\">\n      <button mat-list-item (click)=\"query(cuisine)\" > {{cuisine}} </button>\n    </mat-action-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n      <mat-card class='border'> \n        <mat-card-title>{{title}}</mat-card-title>\n        <mat-chip-list *ngFor=\"let recommendation of recommendations\">\n          <mat-chip>{{recommendation}}</mat-chip>\n        </mat-chip-list>\n      </mat-card>\n      \n  </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -248,6 +248,7 @@ let PanelComponent = class PanelComponent {
             .set('Content-Type', 'application/json')
             .set('Access-Control-Allow-Origin', '*')
             .set('Accept', 'application/json');
+        this.cuisines = [''];
     }
     ngOnInit() {
         this.http.get('http://3.214.193.124:5000/cuisines', { headers: this.headers }).subscribe(response => {

@@ -17,7 +17,9 @@ export class PanelComponent implements OnInit {
     .set('Access-Control-Allow-Origin', '*')
     .set('Accept', 'application/json');
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.cuisines = [''];
+  }
 
   ngOnInit() {
     this.http.get('http://3.214.193.124:5000/cuisines', { headers: this.headers}).subscribe(response => {
