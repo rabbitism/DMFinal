@@ -1,6 +1,7 @@
 from flask import Flask, request, redirect
 import json
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -31,16 +32,19 @@ with open(os.sep.join(['.', 'Task7Matrix.csv']), 'r') as mf:
         top_list[cuisines[i]] = top
 
 @app.route("/", methods=['GET'])
+@cross_origin()
 def hello():
     return "Hello World!"
 
 @app.route("/cuisines", methods=['GET'])
+@cross_origin()
 def return_cuisines():
     response = make_response(json.dumps(cuisines))
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response
 
 @app.route("/cuisine/<cuisine>/<top>", methods=['GET'])
+@cross_origin()
 def return_top(cuisine: str, top: int):
     top_index = min(int(top), 40)
     response = make_response(json.dumps(top_list[cuisine][0:top_index]))
