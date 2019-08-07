@@ -303,9 +303,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var appRoutes = [
-    { path: 'home', component: _app_component__WEBPACK_IMPORTED_MODULE_0__["AppComponent"] },
+    { path: '', component: _app_component__WEBPACK_IMPORTED_MODULE_0__["AppComponent"] },
     { path: 'value', component: _value_value_component__WEBPACK_IMPORTED_MODULE_1__["ValueComponent"] },
-    { path: '**', redirectTo: 'home', pathMatch: 'full' },
+    { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 
