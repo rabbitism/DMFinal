@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect
 import json
 import os
-import info
+import info as info
 
 app = Flask(__name__)
 
