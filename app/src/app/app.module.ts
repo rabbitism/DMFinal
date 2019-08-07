@@ -5,21 +5,30 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
-import { NavComponent } from './nav/nav.component';
 import { QueryService } from './_services/query.service';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PanelComponent } from './panel/panel.component';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
    declarations: [
       AppComponent,
       ValueComponent,
-      NavComponent
+      PanelComponent
    ],
    imports: [
+      BrowserAnimationsModule,
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      MatSidenavModule,
+      MatButtonModule,
+      MatListModule,
       RouterModule.forRoot(appRoutes)
    ],
    providers: [

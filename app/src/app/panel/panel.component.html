@@ -1,0 +1,10 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-action-list *ngFor="let cuisine of cuisines">
+      <button mat-list-item> {{cuisine}} </button>
+    </mat-action-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <input>
+  </mat-sidenav-content>
+</mat-sidenav-container>
